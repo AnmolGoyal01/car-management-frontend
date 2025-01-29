@@ -1,9 +1,11 @@
-import React from 'react'
+import { SignupForm } from "../components/";
 
-type Props = {}
+type Props = {};
 
 export default function SignUpPage({}: Props) {
   return (
-    <div>SignUpPage</div>
-  )
+    <div>
+      <SignupForm />
+    </div>
+  );
 }

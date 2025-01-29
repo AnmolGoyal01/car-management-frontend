@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ICar } from "../../types/carTypes";
+import { ICar, CarApiResponse } from "../../types/carTypes";
 
 const initialState = {
-  allCars: [] as ICar[],
-  userCars: [] as ICar[],
+  allCars: {} as CarApiResponse,
+  userCars: {} as CarApiResponse,
   status: false,
   error: null,
   loading: false,
@@ -31,13 +31,18 @@ const carSlice = createSlice({
       state.loading = false;
     },
     clearAllCars: (state) => {
-      state.allCars = [];
+      state.allCars = { cars: [], totalCars: 0, totalPages: 0, currentPage: 0 };
       state.status = false;
       state.loading = false;
       state.error = null;
     },
     clearUserCars: (state) => {
-      state.userCars = [];
+      state.userCars = {
+        cars: [],
+        totalCars: 0,
+        totalPages: 0,
+        currentPage: 0,
+      };
       state.status = false;
       state.loading = false;
       state.error = null;
@@ -45,13 +50,13 @@ const carSlice = createSlice({
   },
 });
 
-export const { 
-  setAllCars, 
-  setUserCars, 
-  setLoading, 
-  setError, 
-  clearAllCars, 
-  clearUserCars 
+export const {
+  setAllCars,
+  setUserCars,
+  setLoading,
+  setError,
+  clearAllCars,
+  clearUserCars,
 } = carSlice.actions;
 
 export default carSlice.reducer;

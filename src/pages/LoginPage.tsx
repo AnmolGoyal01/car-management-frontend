@@ -1,9 +1,11 @@
-import React from 'react'
+import { LoginForm } from "../components";
 
-type Props = {}
+type Props = {};
 
 export default function LoginPage({}: Props) {
   return (
-    <div>LoginPage</div>
-  )
+    <div>
+      <LoginForm />
+    </div>
+  );
 }

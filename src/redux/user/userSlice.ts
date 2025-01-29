@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { UserApiResponse } from "../../types/userTypes";
 
 const initialState = {
   status: false,
-  user: null,
+  user: {} as UserApiResponse,
   error: null,
   loading: false,
 };
@@ -17,7 +18,7 @@ const authSlice = createSlice({
       state.loading = false;
     },
     clearUser: (state) => {
-      state.user = null;
+      state.user = {};
       state.status = false;
       state.loading = false;
     },

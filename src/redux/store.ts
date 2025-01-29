@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./user/userSlice";
+import carReducer from "./car/carSlice";
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer,
+    user: authReducer,
+    cars: carReducer,
   },
 });
 
-export type AppDispatch = typeof store.dispatch; // Define AppDispatch type
+export type RootState = ReturnType<typeof store.getState>;

@@ -9,10 +9,11 @@ import {
   AllCarPage,
   HomePage,
   ProductCreationPage,
-  ProductDetailPage,
   SignUpPage,
   UserCarPage,
   LoginPage,
+  CarDetailPage,
+  EditProductPage,
 } from "./pages";
 
 const router = createBrowserRouter([
@@ -27,9 +28,10 @@ const router = createBrowserRouter([
       { path: "/all-car", element: <AllCarPage /> },
       { path: "/user-car", element: <UserCarPage /> },
       { path: "/product-creation", element: <ProductCreationPage /> },
-      { path: "/product-detail", element: <ProductDetailPage /> },
       { path: "/signup", element: <SignUpPage /> },
       { path: "/login", element: <LoginPage /> },
+      { path: "/car/:carId", element: <CarDetailPage /> },
+      { path: "/car/edit/:carId", element: <EditProductPage /> },
     ],
   },
 ]);

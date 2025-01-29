@@ -15,3 +15,10 @@ export interface UserRegisterPayload {
   email: string;
   password: string;
 }
+
+export interface UserApiResponse {
+  data?: IUser;
+  message?: string;
+  statusCode?: number;
+  success?: boolean;
+}

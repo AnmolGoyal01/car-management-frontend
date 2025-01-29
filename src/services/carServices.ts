@@ -2,8 +2,15 @@ import axiosInstance from "../utils/axiosInstance";
 import { extractErrorMessage } from "../utils/errorHandler";
 import { ICar, CarApiResponse, CarPayload } from "../types/carTypes";
 
+export interface ApiCarResponse {
+  data?: CarApiResponse;
+  message?: string;
+  statusCode?: number;
+  success?: boolean;
+}
+
 class CarService {
-  private api = "/cars";
+  private api = "/car";
 
   async getAllCars({
     page = 1,
@@ -17,7 +24,7 @@ class CarService {
     search?: string;
     sortBy?: string;
     sortOrder?: "asc" | "desc";
-  }): Promise<CarApiResponse | null> {
+  }): Promise<ApiCarResponse | null> {
     try {
       const params = new URLSearchParams({
         page: `${page}`,
@@ -26,7 +33,7 @@ class CarService {
         sortBy,
         sortOrder,
       });
-      const response = await axiosInstance.get<CarApiResponse>(
+      const response = await axiosInstance.get<ApiCarResponse>(
         `${this.api}?${params.toString()}`
       );
       return response.data;
@@ -47,7 +54,7 @@ class CarService {
     search?: string;
     sortBy?: string;
     sortOrder?: "asc" | "desc";
-  }): Promise<CarApiResponse | null> {
+  }): Promise<ApiCarResponse | null> {
     try {
       const params = new URLSearchParams({
         page: `${page}`,
@@ -56,7 +63,7 @@ class CarService {
         sortBy,
         sortOrder,
       });
-      const response = await axiosInstance.get<CarApiResponse>(
+      const response = await axiosInstance.get<ApiCarResponse>(
         `${this.api}/my-cars?${params.toString()}`
       );
       return response.data;

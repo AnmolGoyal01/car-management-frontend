@@ -7,7 +7,7 @@ import {
 } from "../types/userTypes";
 
 class UserService {
-  private api = "/auth";
+  private api = "/user";
 
   async getCurrentUser(): Promise<IUser | null> {
     try {
