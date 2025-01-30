@@ -17,7 +17,7 @@ const HomePage = () => {
 
   const getStarted = () => {
     if (loggedIn) {
-      navigate("/user-car");
+      navigate("/all-car");
     } else {
       navigate("/signup");
     }
