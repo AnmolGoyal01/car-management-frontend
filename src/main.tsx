@@ -15,6 +15,7 @@ import {
   CarDetailPage,
   EditProductPage,
 } from "./pages";
+import ProtectedRoute from "./components/ProtectedRoute.tsx";
 
 const router = createBrowserRouter([
   {
@@ -26,12 +27,54 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       { path: "/all-car", element: <AllCarPage /> },
-      { path: "/user-car", element: <UserCarPage /> },
-      { path: "/product-creation", element: <ProductCreationPage /> },
-      { path: "/signup", element: <SignUpPage /> },
-      { path: "/login", element: <LoginPage /> },
-      { path: "/car/:carId", element: <CarDetailPage /> },
-      { path: "/car/edit/:carId", element: <EditProductPage /> },
+      {
+        path: "/user-car",
+        element: (
+          <ProtectedRoute authentication={true}>
+            <UserCarPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/product-creation",
+        element: (
+          <ProtectedRoute authentication={true}>
+            <ProductCreationPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/signup",
+        element: (
+          <ProtectedRoute authentication={false}>
+            <SignUpPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/login",
+        element: (
+          <ProtectedRoute authentication={false}>
+            <LoginPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/car/:carId",
+        element: (
+          <ProtectedRoute authentication={true}>
+            <CarDetailPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/car/edit/:carId",
+        element: (
+          <ProtectedRoute authentication={true}>
+            <EditProductPage />
+          </ProtectedRoute>
+        ),
+      },
     ],
   },
 ]);
