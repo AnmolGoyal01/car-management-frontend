@@ -51,7 +51,7 @@ const ProductCreationForm: React.FC<ProductCreationFormProps> = ({
         type="text"
         name="title"
         placeholder="Car Title"
-        value={formData.title}
+        value={formData?.title}
         onChange={handleChange}
         className="w-full p-2 border rounded mb-4"
         required
@@ -60,7 +60,7 @@ const ProductCreationForm: React.FC<ProductCreationFormProps> = ({
       <textarea
         name="description"
         placeholder="Description"
-        value={formData.description}
+        value={formData?.description}
         onChange={handleChange}
         className="w-full p-2 border rounded mb-4"
         required
@@ -70,7 +70,7 @@ const ProductCreationForm: React.FC<ProductCreationFormProps> = ({
         type="text"
         name="tags"
         placeholder="Tags (comma-separated)"
-        value={formData.tags}
+        value={formData?.tags}
         onChange={handleChange}
         className="w-full p-2 border rounded mb-4"
       />

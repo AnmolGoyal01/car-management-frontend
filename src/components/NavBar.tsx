@@ -21,10 +21,10 @@ const NavBar = () => {
   }, [theme]);
 
   useEffect(() => {
-    if (userState.status === true) {
+    if (userState?.status === true) {
       console.log(userState);
     }
-  }, [userState.status]);
+  }, [userState?.status]);
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -69,7 +69,7 @@ const NavBar = () => {
           menuItems.map((item, index) => (
             <NavLink
               key={index}
-              to={item.link}
+              to={item?.link}
               className={({ isActive }) =>
                 `text-gray-800 dark:text-gray-200 hover:text-blue-500 px-3 py-2 rounded-md text-lg font-medium ${
                   isActive
@@ -78,7 +78,7 @@ const NavBar = () => {
                 }`
               }
             >
-              {item.name}
+              {item?.name}
             </NavLink>
           ))}
 
@@ -92,10 +92,10 @@ const NavBar = () => {
 
         {/* User Section or Login/Signup */}
         <div className="flex items-center space-x-4">
-          {(userState.status === true && userState?.user) ? (
+          {(userState?.status === true && userState?.user) ? (
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center">
-                {userState.user?.data?.userName?.charAt(0).toUpperCase()}
+                {userState?.user?.data?.userName?.charAt(0).toUpperCase()}
               </div>
               <button
                 onClick={handleLogout}

@@ -9,7 +9,7 @@ const ProductCreationPage = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = async (car: CarPayload) => {
-    await CarActions.addCar(car)(dispatch);
+    await CarActions?.addCar(car)(dispatch);
     navigate("/cars");
   };
 

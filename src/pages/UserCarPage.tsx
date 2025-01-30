@@ -20,8 +20,8 @@ const UserCarPage = () => {
     loadCars();
   }, []);
   useEffect(() => {
-    setCars(carData.userCars.cars);
-  }, [carData.userCars]);
+    setCars(carData?.userCars?.cars);
+  }, [carData?.userCars]);
 
   const handleCarClick = (id: string) => {
     navigate(`/car/${id}`);
@@ -31,9 +31,9 @@ const UserCarPage = () => {
       {cars?.map((car) => (
         <div
           className="hover:cursor-pointer"
-          key={car._id}
+          key={car?._id}
           onClick={() => {
-            handleCarClick(car._id);
+            handleCarClick(car?._id);
           }}
         >
           <CarCard car={car} />

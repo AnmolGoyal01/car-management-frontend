@@ -13,9 +13,9 @@ const EditProductForm: React.FC<EditProductFormProps> = ({
   onCancel,
 }) => {
   const [formData, setFormData] = useState<CarPayload>({
-    title: initialData.title,
-    description: initialData.description,
-    tags: initialData.tags.join(", "),
+    title: initialData?.title,
+    description: initialData?.description,
+    tags: initialData?.tags.join(", "),
     images: [],
     replaceImages: false,
   });
@@ -63,7 +63,7 @@ const EditProductForm: React.FC<EditProductFormProps> = ({
         type="text"
         name="title"
         placeholder="Car Title"
-        value={formData.title}
+        value={formData?.title}
         onChange={handleChange}
         className="w-full p-2 border rounded mb-4"
         required
@@ -72,7 +72,7 @@ const EditProductForm: React.FC<EditProductFormProps> = ({
       <textarea
         name="description"
         placeholder="Description"
-        value={formData.description}
+        value={formData?.description}
         onChange={handleChange}
         className="w-full p-2 border rounded mb-4"
         required
@@ -82,7 +82,7 @@ const EditProductForm: React.FC<EditProductFormProps> = ({
         type="text"
         name="tags"
         placeholder="Tags (comma-separated)"
-        value={formData.tags}
+        value={formData?.tags}
         onChange={handleChange}
         className="w-full p-2 border rounded mb-4"
       />

@@ -10,7 +10,7 @@ const HomePage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (userState.status) setLoggedIn(true);
+    if (userState?.status) setLoggedIn(true);
     else setLoggedIn(false);
     setLoading(false);
   }, [userState]);

@@ -20,7 +20,7 @@ const CarPage = () => {
     if (carId) {
       let carFound = false;
       carData?.allCars?.cars?.forEach((car) => {
-        if (car._id === carId) {
+        if (car?._id === carId) {
           setCar(car);
           carFound = true;
         }

@@ -9,7 +9,7 @@ interface CarCardProps {
 const CarCard = ({ car }: CarCardProps) => {
   return (
     <div className="bg-white p-4 rounded-lg shadow-lg">
-      <ImageCarousel images={car.images} />
+      <ImageCarousel images={car?.images} />
       <CarDetails car={car} />
     </div>
   );

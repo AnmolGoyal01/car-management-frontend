@@ -13,7 +13,7 @@ const EditProductPage = () => {
     navigate("/");
   }
   const car = useSelector((state: RootState) =>
-    state.cars?.userCars?.cars.find((c) => c._id === id)
+    state.cars?.userCars?.cars?.find((c) => c?._id === id)
   );
   if (!car) {
     return <div className="p-6 text-center">Car not found</div>;

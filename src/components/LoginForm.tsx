@@ -31,13 +31,13 @@ const LoginForm = () => {
     try {
       const user = await UserActions.loginUser(formData)(dispatch);
       if (!user) {
-        setError(userData.error || "Invalid credentials");
+        setError(userData?.error || "Invalid credentials");
       } else {
         navigate("/");
       }
     } catch (error: any) {
-      console.log(error.message);
-      setError(error.message);
+      console.log(error?.message);
+      setError(error?.message);
     }
   };
 
@@ -57,7 +57,7 @@ const LoginForm = () => {
               id="identifier"
               type="text"
               name="identifier"
-              value={formData.identifier}
+              value={formData?.identifier}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your username or email"
@@ -76,7 +76,7 @@ const LoginForm = () => {
               id="password"
               type="password"
               name="password"
-              value={formData.password}
+              value={formData?.password}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your password"

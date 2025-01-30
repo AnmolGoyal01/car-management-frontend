@@ -27,8 +27,8 @@ const SignupForm = () => {
     try {
       UserActions.registerUser(formData)(dispatch);
     } catch (error: any) {
-      console.log(error.message);
-      setError(error.message);
+      console.log(error?.message);
+      setError(error?.message);
     }
   };
 
@@ -44,7 +44,7 @@ const SignupForm = () => {
             <input
               type="text"
               name="fullName"
-              value={formData.fullName}
+              value={formData?.fullName}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your username"
@@ -56,7 +56,7 @@ const SignupForm = () => {
             <input
               type="text"
               name="userName"
-              value={formData.userName}
+              value={formData?.userName}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your username"
@@ -71,7 +71,7 @@ const SignupForm = () => {
             <input
               type="email"
               name="email"
-              value={formData.email}
+              value={formData?.email}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your email"
@@ -86,11 +86,11 @@ const SignupForm = () => {
             <input
               type="password"
               name="password"
-              value={formData.password}
+              value={formData?.password}
               onChange={handleChange}
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your password"
-            // required={true}
+              required={true}
             />
           </div>
 

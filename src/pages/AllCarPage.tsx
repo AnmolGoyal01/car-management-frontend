@@ -19,11 +19,11 @@ const AllCarPage = () => {
 
   useEffect(() => {
     loadCars();
-    setCars(carData.allCars.cars);
+    setCars(carData?.allCars?.cars);
   }, []);
   useEffect(() => {
-    setCars(carData.allCars.cars);
-  }, [carData.allCars]);
+    setCars(carData?.allCars?.cars);
+  }, [carData?.allCars]);
 
   const handleCarClick = (e: any, id: string) => {
     if (e.target.tagName === "BUTTON") return;
@@ -32,7 +32,7 @@ const AllCarPage = () => {
 
   const filterCars = async () => {
     await CarActions.getAllCars({ search: searchQuery })(dispatch);
-    setCars(carData.allCars.cars);
+    setCars(carData?.allCars?.cars);
   };
 
   return (
@@ -57,11 +57,11 @@ const AllCarPage = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {cars?.length > 0 ? (
-          cars.map((car) => (
+          cars?.map((car) => (
             <div
               className="hover:cursor-pointer"
-              key={car._id}
-              onClick={(e) => handleCarClick(e, car._id)}
+              key={car?._id}
+              onClick={(e) => handleCarClick(e, car?._id)}
             >
               <CarCard car={car} />
             </div>
