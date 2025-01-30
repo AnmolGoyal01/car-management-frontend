@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": "http://anmol-car-management.azurewebsites.net",
+      "/api": "https://anmol-car-management.azurewebsites.net",
     },
   },
 });
