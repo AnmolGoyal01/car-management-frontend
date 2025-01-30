@@ -2,7 +2,6 @@ import { Dispatch } from "redux";
 import carService from "../../services/carServices";
 import { setAllCars, setUserCars, setLoading, setError } from "./carSlice";
 import { CarPayload } from "../../types/carTypes";
-import { ApiCarResponse } from "../../services/carServices";
 
 class CarActions {
   static getAllCars = ({

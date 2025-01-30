@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CarPayload, ICar } from "../types/carTypes";
+import { CarPayload } from "../types/carTypes";
 
 interface ProductCreationFormProps {
   onSubmit: (car: CarPayload) => void;

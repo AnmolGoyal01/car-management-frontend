@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ICar, CarApiResponse } from "../../types/carTypes";
+import { CarApiResponse } from "../../types/carTypes";
 
 const initialState = {
   allCars: {} as CarApiResponse,
