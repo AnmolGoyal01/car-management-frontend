@@ -52,6 +52,10 @@ class UserActions {
       dispatch(setLoading());
       try {
         const currentUser = await userService.getCurrentUser();
+        if (!currentUser) {
+          this.logoutUser()(dispatch);
+          return;
+        }
         dispatch(setUser(currentUser));
       } catch (error: any) {
         dispatch(setError(error.message));
